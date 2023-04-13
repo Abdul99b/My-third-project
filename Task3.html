@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- for language -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=d, initial-scale=1.0">
+    <title>Task #3</title>
+</head>
+<style>
+
+</style>
+<body>
+   
+<link rel="stylesheet" href="Abdulrahman.css">
+    <!-- Note: -->
+    <section>
+        
+    <form  method="post" action="r2.php">
+        <center>
+       
+
+            
+            <p><a href="https://dnet.sa/"target="_blank">
+                <img src= "images.png"width="25%" height="" >
+                
+            </a></p>
+            <p>Welcome to dnet</p>
+            <div class="parent">
+            <!-- Left -->
+           
+           
+           
+            <div class="left">
+                <label>الإيميل</label>
+                
+            </div>
+            <!-- Right -->
+            <div class="right">
+                <input type="email" name="email" id="">
+            </div>
+        </div>
+        <div class="parent">
+            <!-- Left -->
+            <div class="left">
+               
+                
+                <label>mobail::</label>
+            
+            </div>
+            <!-- Right -->
+            <div class="right">
+                <input type="text"  name="m1"  id="">
+            </div>
+            <div class="left">
+                <label>Time :</label>
+            </div>
+            <!-- Right -->
+            <div class="right">
+                <input type="time" name="m2">
+            </div>
+        </div>
+        <div class="parent">
+           
+            <!-- Left -->
+            <div class="left">
+                <label>Birthdate :</label>
+            </div>
+            <!-- Right -->
+            <div class="right">
+                <input type="date" name="m3">
+            </div>
+        <div class="parent">
+            <!-- Left -->
+           
+            </div>
+
+            
+            <div class="left">
+                <label>week:</label>
+            </div>
+            <!-- Right -->
+            <div class="right">
+                <input type="week" name="m4">
+            </div>
+        </div>
+        
+        
+        </div>
+        
+        </div>
+        <div class="left">
+            <label>link</label>
+        </div>
+        
+        <!-- Right -->
+        <div class="right">
+
+<input type="url" name="url" id="url"
+       placeholder="https://example.com">
+       
+        <div class="parent">
+            <div class="left">
+                <label>Add images:</label>
+            </div>
+            <!-- Right -->
+            <div class="right">
+                <input type="image"img src= "images.png"width="25%">
+                
+            </div>
+            <div class="left">
+                <label>color:</label>
+            </div>
+            <!-- Right -->
+            <div class="right">
+                <input type="color">
+            </div>
+            <div class="left">
+                <label>text:</label>
+            </div>
+            <!-- Right -->
+            <div class="right">
+                <input type="text"name="m5">
+            </div>
+            
+            <!-- Left -->
+            <div class="left">
+                <label>File:</label>
+            </div>
+            <!-- Right -->
+            <div class="right">
+                <input type="file">
+            </div>
+            <div class="left">
+                <label>Select the city:</label>
+            </div>
+            <!-- Right -->
+            <div class="right">
+                
+                <select id="cities" onchange="showNeighborhoods()">
+                    <option value="">-- اختر مدينة --</option>
+                    <option value="riyadh">الرياض</option>
+                    <option value="jeddah">جدة</option>
+                   
+                </select>
+                
+                <label for="neighborhoods-label" style="display:none;">اختر الحي:</label>
+                <select id="neighborhoods" style="display:none;">
+                </select>
+        </div>
+        <div class="btn">
+            
+            <button type="submit" name="send" class="btn" style="
+                width: auto;
+                padding: 8px 20px;
+                border-radius: 12%;
+                border-color:rgb(255, 248, 248);
+                color: rgb(17, 70, 70);
+                background-color:rgb(51, 196, 196); "> send</button>
+
+        
+
+       
+        </div>
+        
+
+</form>
+
+    </section>
+
+    <script>
+        
+        const neighborhoods = {
+			"riyadh": ["الربوة", "العزيزية", "المرسلات",],
+			"jeddah": ["البلد", "المروى", "الصفا",],
+			
+		};
+
+		function showNeighborhoods() {
+			const citySelect = document.getElementById("cities");
+			const neighborhoodsSelect = document.getElementById("neighborhoods");
+			
+
+			if (citySelect.value) {
+				neighborhoodsSelect.innerHTML = "";
+
+				const defaultOption = document.createElement("option");
+				
+				defaultOption.textContent = "-- اختر حي --";
+				neighborhoodsSelect.appendChild(defaultOption);
+
+				const selectedNeighborhoods = neighborhoods[citySelect.value];
+				selectedNeighborhoods.forEach(function(neighborhood) {
+					const option = document.createElement("option");
+					
+					option.textContent = neighborhood;
+					neighborhoodsSelect.appendChild(option);
+				});
+
+				neighborhoodsSelect.style.display = "block";
+				neighborhoodsLabel.style.display = "block";
+			} else {
+				neighborhoodsSelect.style.display = "none";
+				neighborhoodsLabel.style.display = "none";
+			}
+		}
+    </script>
+</body>
+</html>
